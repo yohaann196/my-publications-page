@@ -6,251 +6,66 @@
   <title>Publications - yohaann196</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #24292f;
-      background: #f6f8fa;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      background: #0d1117;
-      color: #e6edf3;
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    /* little avatar circle */
-    .avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: #30363d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #24292f; background: #f6f8fa; min-height: 100vh; display: flex; flex-direction: column; }
+    header { background: #0d1117; color: #e6edf3; padding: 1.25rem 2rem; display: flex; align-items: center; gap: 1rem; }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: #30363d; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .avatar svg { width: 20px; height: 20px; fill: #8b949e; }
-
     .header-text { flex: 1; }
     header h1 { font-size: 1.2rem; font-weight: 600; }
     header p { font-size: 0.85rem; color: #8b949e; margin-top: 0.15rem; }
-
-    .gh-link {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: #8b949e;
-      text-decoration: none;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
+    .gh-link { display: flex; align-items: center; gap: 0.4rem; color: #8b949e; text-decoration: none; font-size: 0.85rem; flex-shrink: 0; }
     .gh-link:hover { color: #e6edf3; }
     .gh-link svg { width: 18px; height: 18px; fill: currentColor; }
-
-    .breadcrumb {
-      background: #fff;
-      border-bottom: 1px solid #d0d7de;
-      padding: 0.6rem 2rem;
-      font-size: 0.85rem;
-      color: #57606a;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+    .breadcrumb { background: #fff; border-bottom: 1px solid #d0d7de; padding: 0.6rem 2rem; font-size: 0.85rem; color: #57606a; display: flex; align-items: center; gap: 0.4rem; }
     .breadcrumb a { color: #0969da; text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb .slash { color: #d0d7de; }
-
-    main {
-      max-width: 960px;
-      width: 100%;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      flex: 1;
-    }
-
-    .page-title {
-      margin-bottom: 1.5rem;
-    }
-    .page-title h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    .page-title p {
-      color: #57606a;
-      font-size: 0.92rem;
-      margin-top: 0.3rem;
-    }
-
-    /* top bar above cards */
-    .list-header {
-      background: #fff;
-      border: 1px solid #d0d7de;
-      border-bottom: none;
-      border-radius: 6px 6px 0 0;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      color: #57606a;
-    }
-    .count-pill {
-      background: #eaeef2;
-      color: #57606a;
-      border-radius: 2em;
-      padding: 0.05em 0.55em;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-
-    .card-list {
-      background: #fff;
-      border: 1px solid #d0d7de;
-      border-radius: 0 0 6px 6px;
-      overflow: hidden;
-    }
-
-    .card {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.25rem;
-      border-bottom: 1px solid #d0d7de;
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.1s;
-    }
+    main { max-width: 960px; width: 100%; margin: 2rem auto; padding: 0 1.5rem; flex: 1; }
+    .page-title { margin-bottom: 1.5rem; }
+    .page-title h2 { font-size: 1.5rem; font-weight: 600; }
+    .page-title p { color: #57606a; font-size: 0.92rem; margin-top: 0.3rem; }
+    .list-header { background: #fff; border: 1px solid #d0d7de; border-bottom: none; border-radius: 6px 6px 0 0; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #57606a; }
+    .count-pill { background: #eaeef2; color: #57606a; border-radius: 2em; padding: 0.05em 0.55em; font-size: 0.78rem; font-weight: 600; }
+    .card-list { background: #fff; border: 1px solid #d0d7de; border-radius: 0 0 6px 6px; overflow: hidden; }
+    .card { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; border-bottom: 1px solid #d0d7de; text-decoration: none; color: inherit; transition: background 0.1s; }
     .card:last-child { border-bottom: none; }
     .card:hover { background: #f6f8fa; }
-
-    .card-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .card-icon { width: 40px; height: 40px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .card-icon svg { width: 22px; height: 22px; }
-
     .green-icon { background: #dafbe1; }
-    .green-icon svg { fill: #1a7f37; }
+    .green-icon svg { fill: none; stroke: #1a7f37; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .blue-icon { background: #ddf4ff; }
-    .blue-icon svg { fill: #0550ae; }
-
+    .blue-icon svg { fill: none; stroke: #0550ae; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .card-body { flex: 1; min-width: 0; }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0969da;
-      margin-bottom: 0.2rem;
-      display: block;
-    }
+    .card-title { font-size: 1rem; font-weight: 600; color: #0969da; margin-bottom: 0.2rem; display: block; }
     .card:hover .card-title { text-decoration: underline; }
-
-    .card-desc {
-      font-size: 0.88rem;
-      color: #57606a;
-      line-height: 1.5;
-      margin-bottom: 0.6rem;
-    }
-
-    .card-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.85rem;
-      font-size: 0.78rem;
-      color: #57606a;
-    }
-
-    .lang-tag {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
+    .card-desc { font-size: 0.88rem; color: #57606a; line-height: 1.5; margin-bottom: 0.6rem; }
+    .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem; font-size: 0.78rem; color: #57606a; }
+    .lang-tag { display: flex; align-items: center; gap: 0.3rem; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
     .dot-coffee { background: #244776; }
     .dot-python { background: #3572A5; }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.12em 0.6em;
-      border-radius: 2em;
-      border: 1px solid #d0d7de;
-      color: #57606a;
-      background: #f6f8fa;
-    }
-
-    /* arrow that shows on hover */
-    .arrow {
-      width: 16px;
-      height: 16px;
-      fill: #57606a;
-      flex-shrink: 0;
-      margin-top: 6px;
-      opacity: 0;
-      transition: opacity 0.1s;
-    }
+    .badge { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.72rem; font-weight: 600; padding: 0.12em 0.6em; border-radius: 2em; border: 1px solid #d0d7de; color: #57606a; background: #f6f8fa; }
+    .arrow { width: 16px; height: 16px; fill: #57606a; flex-shrink: 0; margin-top: 6px; opacity: 0; transition: opacity 0.1s; }
     .card:hover .arrow { opacity: 1; }
-
-    footer {
-      border-top: 1px solid #d0d7de;
-      margin-top: 3rem;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #8c959f;
-      background: #fff;
-    }
+    footer { border-top: 1px solid #d0d7de; margin-top: 3rem; padding: 1.5rem 2rem; text-align: center; font-size: 0.8rem; color: #8c959f; background: #fff; }
     footer a { color: #0969da; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      header { padding: 1rem; }
-      .breadcrumb { padding: 0.6rem 1rem; }
-      main { padding: 0 1rem; }
-      .card { padding: 1rem; }
-    }
+    @media (max-width: 600px) { header { padding: 1rem; } .breadcrumb { padding: 0.6rem 1rem; } main { padding: 0 1rem; } .card { padding: 1rem; } }
   </style>
 </head>
 <body>
 
 <header>
   <div class="avatar">
-    <svg viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M10.5 5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zm.061 3.073a4 4 0 1 0-5.123 0 6.004 6.004 0 0 0-3.431 5.142.75.75 0 0 0 1.498.07 4.5 4.5 0 0 1 8.99 0 .75.75 0 1 0 1.498-.07 6.005 6.005 0 0 0-3.432-5.142z"/>
-    </svg>
+    <svg viewBox="0 0 24 24" fill="#8b949e"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
   </div>
   <div class="header-text">
     <h1>yohaann196 / publications</h1>
     <p>A collection of articles and research papers</p>
   </div>
   <a class="gh-link" href="https://github.com/yohaann196/my-publications-page" target="_blank">
-    <svg viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-    </svg>
+    <svg viewBox="0 0 24 24" fill="#8b949e"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.748-1.025 2.748-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.577.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
     GitHub
   </a>
 </header>
@@ -262,7 +77,6 @@
 </div>
 
 <main>
-
   <div class="page-title">
     <h2>Articles</h2>
     <p>Published writing and research papers by Yohaan Narayanan.</p>
@@ -277,8 +91,12 @@
 
     <a class="card" href="https://yohaann196.github.io/What-Is-CoffeeScript/" target="_blank">
       <div class="card-icon green-icon">
-        <svg viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a1.75 1.75 0 0 1-1.75-1.75v-2h1.5v2c0 .138.112.25.25.25h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5h-1.5V1.75zm7.5.102V4.25c0 .138.112.25.25.25h2.398L11.5 1.852zM.22 10.22a.75.75 0 0 1 1.06 0L3 11.94l-1.72 1.72a.75.75 0 0 1-1.06-1.06L1.94 11 .22 9.28a.75.75 0 0 1 0-1.06zm4.56 0L6.5 9.5h1.25a.75.75 0 0 1 0 1.5H6.5l-1.72 1.72a.75.75 0 1 1-1.06-1.06L5.44 11l-1.72-1.72a.75.75 0 0 1 1.06-1.06z"/>
+        <!-- Clean file + code icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <polyline points="9 15 11 17 9 19"/>
+          <polyline points="15 15 13 17 15 19"/>
         </svg>
       </div>
       <div class="card-body">
@@ -287,23 +105,22 @@
           An explainer on CoffeeScript — the compile-to-JavaScript language created by Jeremy Ashkenas in 2009. Covers syntax, its historical role in popularising ES6 features, and whether you should use it today. This repo is written in CoffeeScript, about CoffeeScript.
         </p>
         <div class="card-meta">
-          <span class="lang-tag">
-            <span class="dot dot-coffee"></span>
-            CoffeeScript
-          </span>
+          <span class="lang-tag"><span class="dot dot-coffee"></span> CoffeeScript</span>
           <span class="badge">Article</span>
           <span class="badge">CoffeeScript 2.7.0</span>
         </div>
       </div>
-      <svg class="arrow" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06z"/>
-      </svg>
+      <svg class="arrow" viewBox="0 0 16 16" fill="#57606a"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06z"/></svg>
     </a>
 
     <a class="card" href="https://yohaann196.github.io/BusFactor-Research-Paper/" target="_blank">
       <div class="card-icon blue-icon">
-        <svg viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M5 .75A.75.75 0 0 1 5.75 0h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 5 .75zm3.75 0a.75.75 0 0 1 .75-.75h3c.966 0 1.75.784 1.75 1.75v3a.75.75 0 0 1-1.5 0v-3a.25.25 0 0 0-.25-.25h-3a.75.75 0 0 1-.75-.75zM.75 3a.75.75 0 0 0-.75.75v10.5c0 .966.784 1.75 1.75 1.75h10.5A1.75 1.75 0 0 0 14 14.25v-6.5a.75.75 0 0 0-1.5 0v6.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25V3.75A.25.25 0 0 1 1.75 3H4a.75.75 0 0 0 0-1.5H1.75A1.75 1.75 0 0 0 0 3.25v.5A.75.75 0 0 0 .75 3zm3.5 5.25a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75zm.75 2.25a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5h-4z"/>
+        <!-- Clean document / research icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="8" y1="13" x2="16" y2="13"/>
+          <line x1="8" y1="17" x2="13" y2="17"/>
         </svg>
       </div>
       <div class="card-body">
@@ -312,21 +129,15 @@
           A research paper analyzing the bus factor of critical open-source software projects. Quantifies how many contributors a project relies on for the majority of its development, highlighting sustainability risks — using NumPy as a case study.
         </p>
         <div class="card-meta">
-          <span class="lang-tag">
-            <span class="dot dot-python"></span>
-            Python
-          </span>
+          <span class="lang-tag"><span class="dot dot-python"></span> Python</span>
           <span class="badge">Research Paper</span>
           <span class="badge">Open-Source Research</span>
         </div>
       </div>
-      <svg class="arrow" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06z"/>
-      </svg>
+      <svg class="arrow" viewBox="0 0 16 16" fill="#57606a"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06z"/></svg>
     </a>
 
   </div>
-
 </main>
 
 <footer>
